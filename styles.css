@@ -1,0 +1,221 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0d0d0d;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    display: block;
+    height: 200vh; /* Ensure enough height for scrolling */
+    overflow-x: hidden;
+    transition: background-color 0.5s ease; /* Smooth background transition */
+}
+
+.messy-layout {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+
+.messy-layout .text, .messy-layout .animated-header, .messy-layout a.button {
+    position: absolute;
+    color: #ffcccc;
+    font-weight: 600;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Messy positions and rotations for text */
+.animated-header {
+    font-size: 6em;
+    top: 5%;
+    left: 10%;
+    transform: rotate(-15deg);
+}
+
+.text1 {
+    font-size: 2em;
+    top: 20%;
+    left: 5%;
+    transform: rotate(10deg);
+}
+
+.text2 {
+    font-size: 1.5em;
+    top: 40%;
+    left: 20%;
+    transform: rotate(-30deg);
+}
+
+.text3 {
+    font-size: 1.8em;
+    top: 60%;
+    left: 35%;
+    transform: rotate(15deg);
+}
+
+.text4 {
+    font-size: 2em;
+    top: 30%;
+    right: 10%;
+    transform: rotate(-20deg);
+}
+
+.text5 {
+    font-size: 1.6em;
+    bottom: 10%;
+    left: 40%;
+    transform: rotate(25deg);
+}
+
+.text6 {
+    font-size: 2em;
+    bottom: 25%;
+    right: 20%;
+    transform: rotate(5deg);
+}
+
+.text7 {
+    font-size: 1.7em;
+    bottom: 35%;
+    left: 5%;
+    transform: rotate(-15deg);
+}
+
+.text8 {
+    font-size: 2em;
+    top: 50%;
+    right: 30%;
+    transform: rotate(45deg);
+}
+
+a.button {
+    bottom: 5%;
+    right: 5%;
+    font-size: 2em;
+    background: linear-gradient(135deg, #444, #555);
+    padding: 20px 50px;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+}
+
+a.button:hover {
+    background: linear-gradient(135deg, #666, #777);
+}
+
+/* Floating Question Marks */
+.floating-questions {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+}
+
+.floating-question {
+    position: absolute;
+    font-size: 9em;
+    color: rgba(255, 255, 255, 0.5);
+    animation: float 6s infinite ease-in-out; /* Faster animation */
+    top: calc(100% * var(--top));
+    left: calc(100% * var(--left));
+}
+
+/* Keyframe Animation */
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-30px) translateX(30px) rotate(180deg);
+    }
+    100% {
+        transform: translateY(0) translateX(0) rotate(360deg);
+    }
+}
+
+/* Set random positions and animations for each question mark */
+.floating-question:nth-child(1) {
+    --top: 0.1;
+    --left: 0.2;
+    animation-duration: 5s; /* Faster */
+}
+
+.floating-question:nth-child(2) {
+    --top: 0.3;
+    --left: 0.7;
+    animation-duration: 6s; /* Faster */
+}
+
+.floating-question:nth-child(3) {
+    --top: 0.5;
+    --left: 0.1;
+    animation-duration: 4s; /* Faster */
+}
+
+.floating-question:nth-child(4) {
+    --top: 0.6;
+    --left: 0.4;
+    animation-duration: 5s; /* Faster */
+}
+
+.floating-question:nth-child(5) {
+    --top: 0.8;
+    --left: 0.3;
+    animation-duration: 6s; /* Faster */
+}
+
+.floating-question:nth-child(6) {
+    --top: 0.2;
+    --left: 0.9;
+    animation-duration: 4s; /* Faster */
+}
+
+.floating-question:nth-child(7) {
+    --top: 0.75;
+    --left: 0.5;
+    animation-duration: 6s; /* Faster */
+}
+
+.floating-question:nth-child(8) {
+    --top: 0.4;
+    --left: 0.8;
+    animation-duration: 5s; /* Faster */
+}
+
+/* Scroll Content */
+.scroll-content {
+    position: relative;
+    padding: 50px 20px;
+    background-color: #222;
+    color: #ddd;
+    height: 150vh; /* Tall enough to create a long scrolling effect */
+    text-align: justify;
+    z-index: 2;
+}
+
+.long-text {
+    font-size: 2em;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    opacity: 1;
+    transition: transform 0.5s ease, opacity 0.5s ease, color 0.5s ease;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('path-to-background-image.jpg') no-repeat center center/cover;
+    z-index: -1;
+    filter: blur(10px);
+    opacity: 0.9;
+}
